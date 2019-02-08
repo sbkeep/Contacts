@@ -1,0 +1,32 @@
+Contacts Application:
+The goal of this exercise is to create a simple app that interacts with an api and displays data in a usable fashion.
+
+Requirements/Notes:
+
+● UI should be simple but visually appealing and handle varied screen sizes. If you enjoy building a well styled interface this is an opportunity to show off
+● API errors should be handled appropriately
+● App should be built using React or React Native
+● Please don’t use an opinionated boilerplate project (i.e. Create React App is fine since it doesn’t dictate the app structure)
+● This is intended to be representative of how you would build a real project so architect the project as if it were going to be something you’d be maintaining long term and be submitting for code review:
+○ Code clarity / formatting / comments
+○ Testing strategy
+
+○ Data architecture
+API Endpoints
+GET /contacts
+UI Functionality: Display all contacts Phone numbers should be properly formatted in local format. Ability to filter contacts by name
+Response: {contacts: [{ “name”: “Bob Barker”, “number”: “+15556789090”, “context”: “personal”}]}
+
+POST /contact
+UI Functionality: Add new contact
+Body: name - contact name number - the number in E.164 format context - the context for the phone number.
+Response:
+{contact: { “name”: “Bob Barker”, “number”: “+15556789090”, “context”: “personal”}}
+To present you with an api to build against you can run json-server using this db.json.
+
+Misc/Other Notes
+● Please provide a README with any instructions on how to run or compile your code
+● While our main goal is to look at your code, we will run your code and test it.
+● There is no timeline, please take as long as you want. However if you take especially long we may check in.
+● If you have any questions please ask.
+● Easter eggs are encouraged.
