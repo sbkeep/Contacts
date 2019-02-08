@@ -1,19 +1,14 @@
 # Contacts
-This is a simple Contacts interface in React with an Express/Node server & api, compiled with Webpack.
-
+This is a simple Contacts interface in React with an Express/Node server & api, compiled with Webpack.  Node v10+ required to run.
 
 
 Main Libraries used - Express, React, Babel, Webpack, Enzyme + Jest
 
 
 
-
-
 ### Install and Run
-Build file is included `npm install`, then `npm start`
+`npm install`, then `npm start`
 
-
-- Optionally to rebuild - `npm run build`
 
 Navigate to http://localhost:5010 in browser to view app
 
@@ -31,7 +26,7 @@ Functionality
 ======
 
 ## Server API
-- `GET` `/contacts` returns `contactLibrary` with all store contacts
+- `GET` `/contacts` returns `contactLibrary` with all stored contacts
 
 - `POST` `/contact` receives a contact and stores the contact in `contactLibrary`
 
@@ -39,20 +34,22 @@ Functionality
 
 - `DELETE` `/contact/:number` receives a contact number and deletes the associated record in `contactLibrary`
 
+- `contactLibrary` synced with json store to persist contacts
+
 
 ## FrontEnd
   Single page react interface for displaying all contacts
 
   - `ContactsPage`
-    Parent component that stores gets contacts from api and stores in state.  Creates a `Contact` child item for each contact.
+    Parent component that fetches contacts from api and stores in state.  Creates a `Contact` child item for each contact.
 
-     - `Contact` Receives and displays information for a contact.  Tracks state for editing and deleting the contact, with a child for each.
+     - `Contact` Receives and displays information for a contact.  Tracks state for editing and deleting the contact, with a child component for each action.
 
-      - `EditContact` Displays inputs for each contact field and allows user to update.  Uses state to track changes in "draft" mode, and only uses parent/prop method to sync with api on 'save' action.  Also used in `NewContactModal`
+      - `EditContact` Displays inputs for each contact field and allows user to update.  Uses state to track changes in "draft" mode, and only uses the parent prop method to sync with api on 'save' action.  Also used in `NewContactModal`
 
       - `DeleteConfirmation` displays a confirmation step for permanently deleting a contact
 
-    - `Flyouts` Displays either of two flyouts for Deleting and Creating or Restoring a contact.  When deleting there is also an option to Undo.
+    - `Flyouts` Displays either of two flyouts for Deleting and Creating/Restoring a contact.  When deleting there is also an option to Undo.
 
     - `Header` Contains a search bar to filter contacts by name, number, or context
       - `NewContactModal` Uses `EditContact` view to receive information for new contact and use api to create new contact and add to `ContactsPage`
